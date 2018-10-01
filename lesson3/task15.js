@@ -1,21 +1,12 @@
-/* Задание №14. Функции
-Напишите функцию calc(a, b, op), которая выполняет над числами a и b одну из
-арифметических операций и возвращает ее результат. Вид операции определяется
-целым числом op: 1 – вычитание, 2 – умножение, 3 – деление, остальные значения –
-сложение..
-*/
-
- function calc(a, b, op) {
-	var a, b, op, res;
-	 if ( op === 1 ) {
-		 res = a - b;
-	 } else if  (op === 2){
-		 res = a * b;
-	 } else if (op === 3){
-		 res = a / b;
-	 } else {
-		 res = a + b;
-	 }
-	 return res;
- }
-console.log(calc(5,3,6));
+let k = parseInt(prompt('',''));
+let n = parseInt(prompt('',''));
+let numb;
+function digitN(k, n) {
+    if (k < n){
+        return -1;
+    }
+    k = String(k);
+    numb = k.charAt(n - 1);
+    return numb;
+}
+console.log(digitN(k, n));
