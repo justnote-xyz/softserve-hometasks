@@ -1,16 +1,28 @@
-/* 
-Задание №4. Объекты
-Создайте объект, который описывает MP3 плеер.
-*/
+/*Задание №4. Объекты
+Создайте объект, который описывает MP3 плеер.*/
 
 var mp3Player = {};
-mp3Player.sounds = ['linkin park','limp bizkit'];
-mp3Player.nowPlays;   
-mp3Player.play;
-mp3Player.stop;
-mp3Player.volumeStandart = 50;
-mp3Player.volumePlus = function(){
-    this.volumeStandart += 10; 
+var i = 0;
+mp3Player.tracks = ['linkin park','limp bizkit'];
+mp3Player.nowPlaying = function(){
+    console.log("Играет " + this.tracks[i]);}
+mp3Player.play = function(){
+    this.nowPlaying();
+};
+mp3Player.nextTrack = function(){
+    i++;
+    this.nowPlaying();
 }
- console.log(mp3Player.volumeStandart);
- console.log(mp3Player.volumePlus);
+mp3Player.previousTrack = function(){
+    i--;
+    this.nowPlaying();
+}
+mp3Player.pause = function(){
+    console.log("Пауза ");}
+
+
+mp3Player.play();
+mp3Player.nextTrack();
+mp3Player.pause();
+mp3Player.play();
+mp3Player.previousTrack();
